@@ -1,0 +1,83 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/styles.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <title> Product Cart </title>
+    </head>
+    <body>
+        <div class="container" id="mainCartContainer">
+
+
+
+
+            <div class="row justify-content-center mb-4">
+                <div class="col-4">
+                    <h1 class="center"> PRODUCT <br/> CART </h1>
+                </div>
+            </div>
+
+
+
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-11">
+                        <h2>Welcome Default User</h2>
+                        <p>Select the product from the dropdown menu and specify the quantity.</p>
+                        <select class="form-select bottom-margin" aria-label="Product selection" id="dropdownProduct">
+                            <option selected value="-1">Select a product</option>
+                            
+                        </select>
+
+                        <label>Quantity: </label>
+                        <input type="number" id="quantity">
+                    </div>
+                </div>
+                <div class="row justify-content-center" >
+                    <div class="col-11">
+                        <button class="btn btn-primary bottom-margin" id="addProduct">Add product</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-11">
+                        <div class="card-container">
+                            <strong>Total Price: </strong> <span id="totalPriceDisplay">0</span>
+
+                            <table class="table table-striped" >
+                                <thead>
+                                    <tr>
+                                    <th scope="col">Product Name</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Total Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="cartProductTable">
+                                    
+                                </tbody>
+                                </table>
+    
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            
+
+        </div>
+    </body>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="./scripts/CardAndAlert.js"></script>
+    <script src="./scripts/ProductNodeAPI.js"></script>
+    <script src="./scripts/cart.js"></script>
+
+</html>

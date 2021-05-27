@@ -1,0 +1,75 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/styles.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <title> Product Editor</title>
+    </head>
+    <body>
+        <div class="container" id="mainEditorContainer">
+
+
+
+
+            <div class="row justify-content-center mb-4">
+                <div class="col-4">
+                    <h1 class="center"> PRODUCT <br/> EDITOR </h1>
+                </div>
+            </div>
+
+
+
+
+            <div class="container">
+                <div class="row justify-content-center">
+
+                    <form class="col-8" id="product-info-form">
+
+                        <div id="alertDiv">
+                            <!-- <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong>Error 404</strong> you should check the spelling of the product Name.
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div> -->
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="productNameField" class="form-label" > Name of Product </label>
+                          <input type="text" class="form-control" id="productNameField" value="<%= name %>">
+
+                          <label for="productPriceField" class="form-label"> Price of Product </label>
+                          <input type="text" class="form-control" id="productPriceField" value="<%= price %>">
+
+                          <label for="productBrandField" class="form-label"> Brand of Product (Optional)</label>
+                          <input type="text" class="form-control" id="productBrandField" value="<%= brand %>">
+
+                          <label for="productWeightField" class="form-label"> Weight of Product (Optional)</label>
+                          <input type="text" class="form-control" id="productWeightField" value="<%= weight %>">
+
+                          <div id="productFormHelp" class="form-text"> Write at least the name and price of the product to add it to the dashboard cards.</div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Edit</button>
+
+                        
+                    </form>
+                    <div class="col-8">
+                        <a class="btn btn-light" href="http://localhost:3000/productdashboard">Cancel</a>
+                    </div>
+                </div>
+            </div>
+
+
+            
+
+        </div>
+    </body>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="./scripts/CardAndAlert.js"></script>
+    <script src="./scripts/ProductNodeAPI.js"></script>
+    <script src="./scripts/editor.js"></script>
+
+</html>

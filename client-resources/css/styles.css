@@ -1,0 +1,52 @@
+#mainContainer{
+    background-color: wheat;
+    padding-top: 4em;
+    padding-bottom: 4em;
+}
+
+#mainEditorContainer{
+    background-color: rgb(131, 194, 233);
+    padding-top: 4em;
+    padding-bottom: 4em;
+}
+
+#mainLoginContainer{
+    background-color: antiquewhite;
+    padding-top: 4em;
+    padding-bottom: 4em;
+}
+
+#mainSinupContainer{
+    background-color: rgb(215, 245, 250);
+    padding-top: 4em;
+    padding-bottom: 4em;
+}
+
+#mainCartContainer{
+    background-color: rgb(215, 245, 250);
+    padding-top: 4em;
+    padding-bottom: 4em;
+}
+
+.card-container{
+    background-color: whitesmoke;
+    text-align: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.card{
+    margin: 2em 2em;
+}
+
+.btn{
+    margin: 0.5em;
+}
+
+input{
+    margin-bottom: 2em !important;
+}
+
+.bottom-margin{
+    margin-bottom: 2em;
+}
