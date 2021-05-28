@@ -81,3 +81,15 @@ function sendUserLoginInfo(attributes){
         return 404;
       });
 }
+
+                                                            // GET - to logout the user by changing the exipration date of
+                                                            // the cookie.
+function logout(){
+  return axios.get('http://localhost:3000/logout')
+  .then((response) => {
+    console.log(response.data);
+    return response.data;
+  }, (error) => {
+    console.log(error);
+  });
+}

@@ -42,3 +42,8 @@ document.getElementById("addProduct").onclick = ()=>{
     totalPriceCart += product.price * quantity;
     totalPriceDisplay.innerText = totalPriceCart;
 };
+
+document.getElementById("logoutButton").onclick = ()=>{
+    logout();
+    window.open("http://localhost:3000/login", "_self");
+}

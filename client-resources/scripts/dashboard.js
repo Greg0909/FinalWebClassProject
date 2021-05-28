@@ -10,3 +10,8 @@ getAllProducts().then((dataCollection)=>{
         productCollection.push(element);
     });
 });
+
+document.getElementById("logoutButton").onclick = ()=>{
+    logout();
+    window.open("http://localhost:3000/login", "_self");
+}

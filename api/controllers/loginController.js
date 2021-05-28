@@ -15,4 +15,11 @@ module.exports = {
             res.status(404).send("No existe el usuario");
     },
 
+    logoutUser: async function(req, res){
+        console.log("Logging out user...");
+        const accessToken = await UserServices.logoutUser();
+        res.cookie("jwt", accessToken);
+        res.send("Logout succesfull");
+    },
+
 }

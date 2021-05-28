@@ -40,6 +40,15 @@ async function logUser(data){
         return null;
 }
 
+async function logoutUser(){
+    let accessToken = jwt.sign({}, "webclass", {
+        algorithm: "HS256",
+        expiresIn: 0
+    })
+
+    return accessToken
+}
+
 async function addAdminUser(){
     let productInstanceData = new UserModel({email: 'admin@itesm.mx', password: "pass",admin: true});
     productInstanceData.save((err) => {
@@ -69,6 +78,7 @@ async function isAdmin(req){
 module.exports = {
     createUser,
     logUser,
+    logoutUser,
     isAdmin,
     addAdminUser,
     deleteAllUsers

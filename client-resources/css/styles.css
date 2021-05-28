@@ -28,6 +28,16 @@
     padding-bottom: 4em;
 }
 
+#logoutButton{
+    float: right;
+}
+
+.logoutButtonContainer{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
 .card-container{
     background-color: whitesmoke;
     text-align: center;
