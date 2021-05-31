@@ -40,8 +40,9 @@ module.exports = {
         
     },
 
-    renderProductCart: function(req, res){
-        res.render("cart", {});
+    renderProductCart: async function(req, res){
+        let userSearchInstance = await UserServices.getUser(req.userId);
+        res.render("cart", userSearchInstance);
     },
 
     renderLogin: function(req, res){

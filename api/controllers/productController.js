@@ -19,8 +19,8 @@ module.exports = {
     getProduct: async function(req, res){
         console.log("Entering GET of id:", req.params.id);
     
-        let porductSearchInstance = await ProductServices.getProduct(req.params.id);
-        res.send( porductSearchInstance);
+        let productSearchInstance = await ProductServices.getProduct(req.params.id);
+        res.send( productSearchInstance);
     },
     
     getAllProducts: async function(req, res){

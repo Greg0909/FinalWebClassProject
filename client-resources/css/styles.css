@@ -60,3 +60,8 @@ input{
 .bottom-margin{
     margin-bottom: 2em;
 }
+
+#profilePicture{
+    height: 80px;
+    width:auto;
+}

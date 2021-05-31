@@ -45,7 +45,7 @@ app.use((req, res, next)=>{
     }
 
     if(req.url.indexOf("/products") > -1 || req.url.indexOf("/productEditor") > -1 || req.url.indexOf("/productdashboard") > -1  ||
-        (req.url.indexOf("/user") > -1 && req.url.indexOf("/user/create") == -1) || req.url.indexOf("/productcreation") > -1 || req.url.indexOf("/cart") > -1)
+        (req.url.indexOf("/users") > -1 && req.url.indexOf("/users/create") == -1) || req.url.indexOf("/productcreation") > -1 || req.url.indexOf("/cart") > -1)
     {
         let accessToken = req.cookies.jwt;
 

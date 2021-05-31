@@ -8,7 +8,7 @@
  const router = express.Router();
  
  router.use('/products', require('./routes/productRoutes'));
- router.use('/user', require('./routes/userRoutes'));
+ router.use('/users', require('./routes/userRoutes'));
  router.use( require('./routes/viewsRoutes'));
  router.use( require('./routes/loginRoutes'));
 

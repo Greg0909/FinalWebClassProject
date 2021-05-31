@@ -10,8 +10,9 @@
     <body>
         <div class="container" id="mainCartContainer">
 
-
+            
             <div class="logoutButtonContainer">
+                <img id="profilePicture" src="<%= profilePicture %>">
                 <button id="logoutButton" class="btn btn-light">Logout</button>
             </div>
 
@@ -26,7 +27,8 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-11">
-                        <h2>Welcome Default User</h2>
+                        
+                        <h2>Welcome <%= email %></h2>
                         <p>Select the product from the dropdown menu and specify the quantity.</p>
                         <select class="form-select bottom-margin" aria-label="Product selection" id="dropdownProduct">
                             <option selected value="-1">Select a product</option>

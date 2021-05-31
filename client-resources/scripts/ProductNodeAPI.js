@@ -56,7 +56,7 @@ function deleteProduct(id){
                                                             // POST - to send the user sign up info to the server to create
                                                             // a new user interface
 function sendUserSignUpInfo(attributes){
-  return axios.post('http://localhost:3000/user/create', {
+  return axios.post('http://localhost:3000/users/create', {
         ...attributes
       })
       .then((response) => {

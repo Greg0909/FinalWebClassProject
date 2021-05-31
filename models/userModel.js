@@ -4,6 +4,7 @@ const crypto = require('crypto');
 const userSchema = new mongoose.Schema({
     email: String,
     password: String,
+    profilePicture: String,
     admin: Boolean
 });
 
