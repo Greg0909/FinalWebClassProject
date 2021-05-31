@@ -15,7 +15,7 @@ module.exports = {
     },
 
     getUser: async function(req, res){
-        if(!await UserServices.isAdmin(req)){
+        if(!await UserServices.isAdmin(req) && req.params.id != req.userId){
             res.status(403).send(`You are not admin`);
             return;
         }
@@ -30,7 +30,7 @@ module.exports = {
     },
 
     deleteUser: async function(req, res){
-        if(!await UserServices.isAdmin(req)){
+        if(!await UserServices.isAdmin(req) && req.params.id != req.userId){
             res.status(403).send(`You are not admin`);
             return;
         }
@@ -42,7 +42,7 @@ module.exports = {
     },
 
     updateUser: async function(req, res){
-        if(!await UserServices.isAdmin(req)){
+        if(!await UserServices.isAdmin(req) && req.params.id != req.userId){
             res.status(403).send(`You are not admin`);
             return;
         }
@@ -52,7 +52,7 @@ module.exports = {
         if(UserServices.updateUser(req.params.id, req.body))
             res.send("OK");
         else
-            res.status(503).send(`error: no se encontro el usero`);
+            res.status(503).send(`error: no se encontro el usuario`);
 
     },
 

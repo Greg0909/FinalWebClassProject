@@ -8,18 +8,18 @@ document.getElementById("product-info-form").onsubmit = (e) => {
 
 
     if(!productName){ 
-        showAlert("emptyName");
+        showAlert("Empty Name", "Please enter a name in the input field.", "error");
         return
     };
     if(!productPrice){ 
-        showAlert("emptyPrice");
+        showAlert("Empty Price", "Please enter a price in the input field.", "error");
         return
     };
 
                                                             // Checks for valid Price input (should be an integer or decimal number)
     const trimmedProductPrice = productPrice.trim();
     if( !( /^\d+(\.\d+|)$/.test( trimmedProductPrice ) ) ) {
-        showAlert("invalidPrice");
+        showAlert("Invalid Price", "Please enter a valid price in the input field. It should be an integer or decimal number.", "error");
         return;
     }
 

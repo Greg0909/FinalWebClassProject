@@ -18,5 +18,7 @@ router.get('/login', ViewsController.renderLogin);
 
 router.get('/signup', ViewsController.renderSignup);
 
+router.get('/usereditor', ViewsController.renderUserEditor);
+
 
 module.exports = router;

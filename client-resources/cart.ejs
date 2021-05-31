@@ -13,6 +13,7 @@
             
             <div class="logoutButtonContainer">
                 <img id="profilePicture" src="<%= profilePicture %>">
+                <button id="editUser" class="btn btn-light" name="<%= _id %>">Edit Account</button>
                 <button id="logoutButton" class="btn btn-light">Logout</button>
             </div>
 
@@ -27,8 +28,15 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-11">
+
+                        <div id="alertDiv">
+                            <!-- <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong>Error 404</strong> you should check the spelling of the product Name.
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div> -->
+                        </div>
                         
-                        <h2>Welcome <%= email %></h2>
+                        <h2>Welcome <%= name %></h2>
                         <p>Select the product from the dropdown menu and specify the quantity.</p>
                         <select class="form-select bottom-margin" aria-label="Product selection" id="dropdownProduct">
                             <option selected value="-1">Select a product</option>
@@ -68,6 +76,7 @@
     
 
                         </div>
+                        <button id="completePurchase" class="btn btn-success">Complete Purchase</button>
                     </div>
                 </div>
             </div>

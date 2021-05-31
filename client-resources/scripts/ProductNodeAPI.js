@@ -60,10 +60,9 @@ function sendUserSignUpInfo(attributes){
         ...attributes
       })
       .then((response) => {
-        console.log(response);
-        return response.data;
+        return response.status;
       }, (error) => {
-        console.log(error);
+        return 404;
       });
 }
 
@@ -92,4 +91,32 @@ function logout(){
   }, (error) => {
     console.log(error);
   });
+}
+
+                                                            // POST - sends the products added to the cart to the server.
+function completePurchase(cartProducts){
+  return axios.post('http://localhost:3000/completePurchase', 
+      cartProducts
+    )
+    .then((response) => {
+      console.log(response);
+      return response.status;
+    }, (error) => {
+      console.log(error);
+      return 404;
+    });
+}
+
+
+                                                            // PUT - UPDATEs a specific user information.
+function updateUser(attributes){
+    console.log("Actualizando:", attributes);
+    return axios.put('http://localhost:3000/users/' + attributes._id,{
+        ...attributes
+    })
+      .then((response) => {
+        return response.status;
+      }, (error) => {
+        return response.status;
+      });
 }

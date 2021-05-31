@@ -7,11 +7,11 @@ document.getElementById("user-login-form").onsubmit = (e) => {
 
 
     if(!userEmail){ 
-        showAlert("emptyName");
+        showAlert("Empty email", "please enter an email in the email field.", "error");
         return
     };
     if(!userPassword){ 
-        showAlert("emptyPrice");
+        showAlert("Empty password", "please enter the password in the password field.", "error");
         return
     };
 
@@ -30,7 +30,7 @@ document.getElementById("user-login-form").onsubmit = (e) => {
         if(status == 200)
             window.open("http://localhost:3000/productdashboard", "_self");
         else
-            console.log("Error en el e-mail o en la contraseña");
+            showAlert("Invalid account","La cuenta no existe o el mail y contraseña no corresponden","error");
     });
    
 }

@@ -1,16 +1,21 @@
 document.getElementById("user-signup-form").onsubmit = (e) => {
     e.preventDefault();
 
+    const userName = e.target.querySelector("#name").value;
     const userEmail = e.target.querySelector("#email").value;
     const userPassword = e.target.querySelector("#password").value;
 
 
+    if(!userName){ 
+        showAlert("Empty name", "please enter a name in the name field.", "error");
+        return
+    };
     if(!userEmail){ 
-        showAlert("emptyName");
+        showAlert("Empty email", "please enter an email in the email field.", "error");
         return
     };
     if(!userPassword){ 
-        showAlert("emptyPrice");
+        showAlert("Empty password", "please enter the password in the password field.", "error");
         return
     };
 
@@ -23,7 +28,7 @@ document.getElementById("user-signup-form").onsubmit = (e) => {
         reader.readAsDataURL(file);
     }
     else{
-        console.log("No profile picture detected");
+        showAlert("Empty profile picture", "please select a profile picture.", "error");
         return;
     }
 
@@ -39,15 +44,23 @@ document.getElementById("user-signup-form").onsubmit = (e) => {
         profilePicture = reader.result;
         
         sendUserSignUpInfo({
+            name: userName,
             email: userEmail,
             password: userPassword,
             profilePicture: profilePicture,
-        }).then(()=>{
+        }).then((responseStatus)=>{
+            if(responseStatus!=200){
+                showAlert("Error creating the account", "maybe the email is already registered", "error");
+                return;
+            }
+            showAlert("Success on Signup", "please go to the login page to login with the new accoutn", "success");
+
+            e.target.querySelector("#name").value = "";
+            e.target.querySelector("#email").value = "";
+            e.target.querySelector("#password").value = "";
             //window.open("http://localhost:3000/productdashboard", "_self");
         });
 
     }, false);
 
-    
-   
 }

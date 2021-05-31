@@ -17,8 +17,9 @@ module.exports = {
 
     logoutUser: async function(req, res){
         console.log("Logging out user...");
-        const accessToken = await UserServices.logoutUser();
-        res.cookie("jwt", accessToken);
+        // const accessToken = await UserServices.logoutUser();
+        // res.cookie("jwt", accessToken);
+        res.clearCookie("jwt");
         res.send("Logout succesfull");
     },
 

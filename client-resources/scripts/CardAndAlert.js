@@ -125,25 +125,30 @@ const addCard = (attributesValues={}) => {
 
 
 
-function showAlert(alertType="404"){
+function showAlert(title, message ,alertType="error"){
     switch(alertType){
-        case "404":
-            document.getElementById("alertDiv").innerHTML = "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\"><strong>Error 404</strong> you should check the spelling of the product Name.<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button></div>";
-            break;
-        case "emptyName":
-            document.getElementById("alertDiv").innerHTML = "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\"><strong>Empty Name</strong> Please enter a name in the input field.<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button></div>";
-            break;
-        case "emptyPrice":
-            document.getElementById("alertDiv").innerHTML = "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\"><strong>Empty Price</strong> Please enter a price in the input field.<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button></div>";
-            break;
-        case "invalidPrice":
-            document.getElementById("alertDiv").innerHTML = "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\"><strong>Invalid Price</strong> Please enter a valid price in the input field. It should be an integer or decimal number.<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button></div>";
-            break;
-        case "repeated":
-            document.getElementById("alertDiv").innerHTML = "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\"><strong>Repeated Product</strong> The product is already on the dashboard.<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button></div>";
+        // case "404":
+        //     document.getElementById("alertDiv").innerHTML = "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\"><strong>Error 404</strong> you should check the spelling of the product Name.<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button></div>";
+        //     break;
+        // case "emptyName":
+        //     document.getElementById("alertDiv").innerHTML = "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\"><strong>Empty Name</strong> Please enter a name in the input field.<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button></div>";
+        //     break;
+        // case "emptyPrice":
+        //     document.getElementById("alertDiv").innerHTML = "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\"><strong>Empty Price</strong> Please enter a price in the input field.<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button></div>";
+        //     break;
+        // case "invalidPrice":
+        //     document.getElementById("alertDiv").innerHTML = "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\"><strong>Invalid Price</strong> Please enter a valid price in the input field. It should be an integer or decimal number.<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button></div>";
+        //     break;
+        // case "repeated":
+        //     document.getElementById("alertDiv").innerHTML = "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\"><strong>Repeated Product</strong> The product is already on the dashboard.<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button></div>";
+        //     break;
+        case "error":
+            document.getElementById("alertDiv").innerHTML =  `<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\"><strong>${title}</strong> ${message}<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button></div>`;
             break;
         case "success":
-            document.getElementById("alertDiv").innerHTML = "<div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\"><strong>Success</strong> The product was added.<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button></div>";
+            //document.getElementById("alertDiv").innerHTML = "<div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\"><strong>Success</strong> The product was added.<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button></div>";
+            document.getElementById("alertDiv").innerHTML = `<div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\"><strong>${title}</strong> ${message}<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button></div>`;
+
             setTimeout(() => {
                 document.querySelector(".alert button").click();
             }, 1500); 

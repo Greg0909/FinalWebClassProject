@@ -11,6 +11,7 @@
  router.use('/users', require('./routes/userRoutes'));
  router.use( require('./routes/viewsRoutes'));
  router.use( require('./routes/loginRoutes'));
+ router.use( require('./routes/completePurchaseRoutes'));
 
  
  module.exports = router;

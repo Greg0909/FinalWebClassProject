@@ -12,11 +12,11 @@ document.getElementById("product-info-form").onsubmit = (e) => {
     const productWeight = e.target.querySelector("#productWeightField").value;
 
     if(!productName){ 
-        showAlert("emptyName");
+        showAlert("Empty Name", "Please enter a name in the input field.", "error");
         return
     };
     if(!productPrice){ 
-        showAlert("emptyPrice");
+        showAlert("Empty Price", "Please enter a price in the input field.", "error");
         return
     };
 
@@ -24,7 +24,7 @@ document.getElementById("product-info-form").onsubmit = (e) => {
                                                             // decimal number)
     const trimmedProductPrice = productPrice.trim();
     if( !( /^\d+(\.\d+|)$/.test( trimmedProductPrice ) ) ) {
-        showAlert("invalidPrice");
+        showAlert("Invalid Price", "Please enter a valid price in the input field. It should be an integer or decimal number.", "error");
         return;
     }
 
@@ -43,7 +43,7 @@ document.getElementById("product-info-form").onsubmit = (e) => {
         weight: productWeight
     }).then((data)=>{
         //addCard(data);
-        showAlert("success");
+        showAlert("Success", "The product was added successfully.", "success");
                                                             // Erase the values from the input fields after the product
                                                             // card was succesfully added.
         e.target.querySelector("#productNameField").value = "";

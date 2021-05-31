@@ -53,4 +53,16 @@ module.exports = {
         res.sendFile("signup.html", {'root': __dirname + "../../../client-resources/"});
     },
 
+    renderUserEditor: async function(req, res){
+        if(!await UserServices.isAdmin(req) && req.query.id != req.userId){
+            res.writeHead(302, {Location: 'http://localhost:3000/cart'} );
+            res.end();
+            return;
+        }
+        
+        let userSearchInstance = await UserServices.getUser(req.query.id);
+        console.log(userSearchInstance);
+        res.render("userEditor", userSearchInstance);
+    },
+
 }
