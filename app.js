@@ -36,7 +36,6 @@ const UserServices = require('./services/userServices');
                                                             // the server redirects to the login page. This does
                                                             // not apply to the sign up page.
 app.use((req, res, next)=>{
-    console.log("USING A MIDDLEWARE", req.url);
 
     if(req.url==="/login" || req.url==="/signup")
     {
@@ -61,7 +60,6 @@ app.use((req, res, next)=>{
         try{
             payload = jwt.verify(accessToken, "webclass");
             req.userId = payload.id;
-            console.log("payload", payload);
             next();
             return;
         }

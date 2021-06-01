@@ -63,5 +63,7 @@ input{
 
 #profilePicture{
     height: 80px;
+    padding: 8px;
+    border-radius: 30%;
     width:auto;
 }

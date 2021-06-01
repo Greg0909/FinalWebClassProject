@@ -39,7 +39,7 @@ function updateProduct(attributes){
 }
 
 
-                                                            // DELETE - DELEtes a specific product using its id.
+                                                            // DELETE - Deletes a specific product using its id.
 function deleteProduct(id){
     console.log("Tratando de enviar el delete");
     return axios.delete('http://localhost:3000/products/'+id,{
@@ -118,5 +118,17 @@ function updateUser(attributes){
         return response.status;
       }, (error) => {
         return response.status;
+      });
+}
+
+                                                            // DELETE - Deletes a specific user using its id.
+function deleteUser(id){
+    return axios.delete('http://localhost:3000/users/'+id,{
+        id:id
+    })
+      .then((response) => {
+        console.log(response);
+      }, (error) => {
+        console.log(error);
       });
 }

@@ -20,6 +20,7 @@ module.exports = {
         // const accessToken = await UserServices.logoutUser();
         // res.cookie("jwt", accessToken);
         res.clearCookie("jwt");
+        console.log("Logout successfull");
         res.send("Logout succesfull");
     },
 

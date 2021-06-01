@@ -80,3 +80,10 @@ document.getElementById("editUser").onclick = (e)=>{
     const id = e.target.name;
     window.open(`http://localhost:3000/usereditor?id=${id}`, "_self");
 };
+
+document.getElementById("deleteUser").onclick = (e)=>{
+    const id = e.target.name;
+    deleteUser(id).then(()=>{
+        window.open(`http://localhost:3000/login`, "_self");
+    });
+};

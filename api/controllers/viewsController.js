@@ -61,7 +61,6 @@ module.exports = {
         }
         
         let userSearchInstance = await UserServices.getUser(req.query.id);
-        console.log(userSearchInstance);
         res.render("userEditor", userSearchInstance);
     },
 

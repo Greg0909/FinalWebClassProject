@@ -38,6 +38,7 @@ module.exports = {
         console.log("Entering DELETE to delete id:", req.params.id);
     
         await UserServices.deleteUser(req.params.id);
+        res.clearCookie("jwt");
         res.send("OK");
     },
 

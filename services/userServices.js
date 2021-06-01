@@ -23,7 +23,9 @@ async function getUser(id){
 }
 
 async function deleteUser(id){
-    await UserModel.deleteOne({_id: id});
+    const userSearchInstance = await getUser(id);
+    if(!userSearchInstance.admin)
+        await UserModel.deleteOne({_id: id});
 }
 
 async function updateUser(id, data){
@@ -100,10 +102,9 @@ async function deleteAllUsers(){
 }
 
 async function isAdmin(req){
-    console.log("is Admin function was passed an id of: ", req.userId);
+    // console.log("is Admin function was passed an id of: ", req.userId);
     let userSearchInstance = await UserModel.findOne({_id: req.userId});
     if(userSearchInstance){
-        console.log("Is admin =", userSearchInstance.admin);
         return userSearchInstance.admin;
     }
     return false;
